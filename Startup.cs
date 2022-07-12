@@ -31,13 +31,13 @@ namespace BookBuffetWeb2
         {
             services.AddControllers();
 
-            //var connection = Configuration.GetConnectionString("BookBuffetConnectionLocal");
+            var connection = Configuration.GetConnectionString("BookBuffetConnectionLocal");
 
-            var builder = new SqlConnectionStringBuilder(
-            Configuration.GetConnectionString("BookBuffetConnection"));
-            builder.Password = "admin123";
-            builder.UserID = "admin";
-            var connection = builder.ConnectionString; 
+            //var builder = new SqlConnectionStringBuilder(
+            //Configuration.GetConnectionString("BookBuffetConnection"));
+            //builder.Password = "admin123";
+            //builder.UserID = "admin";
+            //var connection = builder.ConnectionString; 
 
             services.AddDbContext<BackendDBContext>(options => options.UseSqlServer(connection));
         }
